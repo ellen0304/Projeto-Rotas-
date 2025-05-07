@@ -13,7 +13,7 @@
 - Salvamento e reconsulta de simulações anteriores.
 
 🗃️ Estrutura de Pastas
-bash
+
 📁 rota_segura/
 │
 ├── main.py                 # Arquivo principal para iniciar a aplicação
@@ -28,11 +28,8 @@ bash
 │   └── grafo.py             # Classe Grafo com métodos BFS, DFS e modificações
 │   └── simulacao.py         # Gerenciamento de simulações salvas
 │
-├── data/                    # Arquivos de simulações salvas (JSON ou pickle)
-│   └── sim_001.json
-│
-└── utils/                   # Funções utilitárias se necessário
-    └── helpers.py
+├── data/                    # Arquivos de simulações salvas (JSON)
+   
 
 
 
