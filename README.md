@@ -14,8 +14,6 @@
 
 🗃️ Estrutura de Pastas
 bash
-Copiar
-Editar
 📁 rota_segura/
 │
 ├── main.py                 # Arquivo principal para iniciar a aplicação
