@@ -20,7 +20,7 @@
    pip install -r requirements.txt
 
 3. Execute o sistema:
-4. 
+ ```bash
 python main.py
 
 
