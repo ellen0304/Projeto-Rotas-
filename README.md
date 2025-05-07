@@ -12,25 +12,25 @@
 - Exibição textual da sequência de nós da rota.
 - Salvamento e reconsulta de simulações anteriores.
 
-🗃️ Estrutura de Pastas
+## 🗃️ Estrutura de Pastas
+
+Abaixo está a organização dos arquivos e diretórios do projeto **Rota Segura**:
 
 📁 rota_segura/
 │
-├── main.py                 # Arquivo principal para iniciar a aplicação
-├── requirements.txt        # Dependências do projeto
-├── README.md               # Este arquivo
+├── main.py # Arquivo principal para iniciar a aplicação
+├── requirements.txt # Dependências do projeto
+├── README.md # Este arquivo
 │
-├── gui/                     # Tudo relacionado à interface Tkinter
-│   └── app.py               # Classe App (Tkinter)
-│   └── componentes.py       # Componentes auxiliares (ex: pop-ups)
+├── gui/ # Tudo relacionado à interface Tkinter
+│ └── app.py # Classe App (Tkinter)
+│ └── componentes.py # Componentes auxiliares (ex: pop-ups)
 │
-├── core/                    # Lógica do grafo e algoritmos
-│   └── grafo.py             # Classe Grafo com métodos BFS, DFS e modificações
-│   └── simulacao.py         # Gerenciamento de simulações salvas
+├── core/ # Lógica do grafo e algoritmos
+│ └── grafo.py # Classe Grafo com métodos BFS, DFS e modificações
+│ └── simulacao.py # Gerenciamento de simulações salvas
 │
-├── data/                    # Arquivos de simulações salvas (JSON)
-   
-
+├── data/ # Arquivos de simulações salvas (JSON)
 
 
 
