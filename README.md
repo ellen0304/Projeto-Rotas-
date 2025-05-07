@@ -1,6 +1,6 @@
 # RS - Rota Segura
 
-🧭 **RS - Rota Segura** é um sistema desenvolvido em Python com interface gráfica (Tkinter) que auxilia a equipe de treinamento de emergência da universidade a simular e planejar rotas de evacuação em caso de incidentes como incêndios. O sistema utiliza algoritmos de grafos para encontrar a rota mais rápida (BFS) e rotas alternativas (DFS).
+🧭 **RS - Rota Segura** é um sistema desenvolvido em Python com interface gráfica (Tkinter) que auxilia a equipe de treinamento de emergência do Centro Universitário Braz Cubas a simular e planejar rotas de evacuação em caso de incidentes como incêndios. O sistema utiliza algoritmos de grafos para encontrar a rota mais rápida (BFS) e rotas alternativas (DFS).
 
 ## 🚀 Funcionalidades
 
