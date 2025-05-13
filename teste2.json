@@ -1,0 +1,52 @@
+{
+    "nos": [
+        "sala1",
+        "sala2",
+        "sala3",
+        "sala4",
+        "sala5",
+        "entrada",
+        "saida"
+    ],
+    "arestas": [
+        [
+            "sala1",
+            "saida"
+        ],
+        [
+            "sala1",
+            "sala3"
+        ],
+        [
+            "sala1",
+            "sala5"
+        ],
+        [
+            "sala2",
+            "entrada"
+        ],
+        [
+            "sala2",
+            "sala4"
+        ],
+        [
+            "sala2",
+            "sala3"
+        ],
+        [
+            "sala3",
+            "sala5"
+        ],
+        [
+            "sala4",
+            "sala5"
+        ],
+        [
+            "saida",
+            "saida"
+        ]
+    ],
+    "entrada": "entrada",
+    "saida": "saida",
+    "incidente": "sala3"
+}
