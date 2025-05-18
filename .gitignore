@@ -1,0 +1,37 @@
+# Bytecode do Python
+__pycache__/
+
+# Ambiente virtual
+.venv/
+env/
+venv/
+ENV/
+*.env
+
+# Arquivos de log e cache
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+
+# Arquivos do VSCode
+.vscode/
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de configuração locais
+*.local
+*.swp
+
+# Dependências (caso existam)
+*.egg-info/
+dist/
+build/
+
+# Arquivos temporários
+*.bak
+*.tmp
