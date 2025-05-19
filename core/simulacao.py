@@ -21,3 +21,5 @@ class SimulacaoManager:
         grafo.entrada = data.get("entrada")
         grafo.saida = data.get("saida")
         grafo.incidente = data.get("incidente")
+ 
+    

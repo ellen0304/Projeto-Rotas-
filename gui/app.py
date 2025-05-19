@@ -12,15 +12,18 @@ class App(tk.Tk):
         self.geometry("1000x700")
         self.configure(bg="#1e1e2f")
 
+        self.iconbitmap('gui/icone.ico')
+
         self.grafo = Grafo()
         self.sim_manager = SimulacaoManager()
         self.figura, self.ax = plt.subplots(figsize=(6, 5))
         self.canvas = FigureCanvasTkAgg(self.figura, master=self)
         self.canvas.get_tk_widget().pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
 
-        self.layout_fixo = None  # Layout fixo do grafo
+        self.layout_fixo = None
         self.criar_botoes()
         self.desenhar_mapa()
+
 
     def criar_botoes(self):
         frame = tk.Frame(self, bg="#1e1e2f")
@@ -39,7 +42,8 @@ class App(tk.Tk):
             ("🛤️ Rota Mais Curta (Dijkstra)", self.buscar_rota_dijkstra),
             ("💾 Salvar Simulação", self.salvar_simulacao),
             ("📂 Carregar Simulação", self.carregar_simulacao),
-            ("🧹 Limpar Rotas", self.limpar_rotas)
+            ("🧹 Limpar Rotas", self.limpar_rotas),
+            ("🗑️ Limpar Grafo", self.limpar_grafo)  
         ]
         for texto, comando in botoes:
             tk.Button(frame, text=texto, command=comando, **style).pack(pady=5)
@@ -141,3 +145,12 @@ class App(tk.Tk):
 
     def limpar_rotas(self):
         self.desenhar_mapa()
+
+    def limpar_grafo(self):  
+        self.grafo.grafo.clear()
+        self.grafo.entrada = None
+        self.grafo.saida = None
+        self.grafo.incidente = None
+        self.layout_fixo = None
+        self.desenhar_mapa()
+        messagebox.showinfo("Grafo Limpo", "Todos os pontos, conexões e incidentes foram removidos.")
