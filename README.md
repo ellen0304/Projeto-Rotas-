@@ -48,11 +48,24 @@ Matplotlib
 ## 🖥️ Como Executar
 
 1. Clone ou baixe este repositório.
-2. Instale as dependências:
+
+2. 📦 Criando e ativando um ambiente virtual (venv) em Python
+
+Siga os passos abaixo para criar e ativar um ambiente virtual com Python.
+
+Acesse a pasta do seu projeto
+
+```bash
+cd caminho/da/sua/pasta
+python -m venv venv
+venv\Scripts\activate
+```
+
+3. Instale as dependências:
    ```bash
    pip install -r requirements.txt 
 
-3. Execute o sistema:
+4. Execute o sistema:
 ```bash
 python main.py
 
