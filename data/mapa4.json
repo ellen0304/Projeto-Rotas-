@@ -1,0 +1,196 @@
+{
+    "nos": [
+        "sala 1",
+        "sala 2",
+        "sala 3",
+        "sala 4",
+        "sala 5",
+        "sala 6",
+        "sala 7",
+        "sala 8",
+        "sala 9",
+        "sala 10",
+        "saida",
+        "sala 11",
+        "secretaria",
+        "banheiros",
+        "sala 12",
+        "sala 13",
+        "sala 14",
+        "sala 15",
+        "sala 16",
+        "sala 17",
+        "sala 18"
+    ],
+    "arestas": [
+        {
+            "origem": "sala 1",
+            "destino": "sala 2",
+            "peso": 3.0
+        },
+        {
+            "origem": "sala 1",
+            "destino": "sala 4",
+            "peso": 2.3
+        },
+        {
+            "origem": "sala 1",
+            "destino": "sala 6",
+            "peso": 2.25
+        },
+        {
+            "origem": "sala 1",
+            "destino": "saida",
+            "peso": 5.0
+        },
+        {
+            "origem": "sala 2",
+            "destino": "sala 3",
+            "peso": 2.0
+        },
+        {
+            "origem": "sala 2",
+            "destino": "sala 5",
+            "peso": 3.1
+        },
+        {
+            "origem": "sala 2",
+            "destino": "sala 8",
+            "peso": 3.2
+        },
+        {
+            "origem": "sala 3",
+            "destino": "sala 4",
+            "peso": 2.25
+        },
+        {
+            "origem": "sala 3",
+            "destino": "sala 9",
+            "peso": 2.35
+        },
+        {
+            "origem": "sala 3",
+            "destino": "sala 16",
+            "peso": 2.1
+        },
+        {
+            "origem": "sala 4",
+            "destino": "banheiros",
+            "peso": 3.3
+        },
+        {
+            "origem": "sala 4",
+            "destino": "sala 18",
+            "peso": 8.0
+        },
+        {
+            "origem": "sala 5",
+            "destino": "sala 6",
+            "peso": 3.0
+        },
+        {
+            "origem": "sala 5",
+            "destino": "sala 7",
+            "peso": 3.35
+        },
+        {
+            "origem": "sala 6",
+            "destino": "secretaria",
+            "peso": 3.1
+        },
+        {
+            "origem": "sala 7",
+            "destino": "sala 8",
+            "peso": 2.25
+        },
+        {
+            "origem": "sala 7",
+            "destino": "sala 10",
+            "peso": 4.1
+        },
+        {
+            "origem": "sala 7",
+            "destino": "sala 13",
+            "peso": 2.3
+        },
+        {
+            "origem": "sala 8",
+            "destino": "sala 9",
+            "peso": 3.1
+        },
+        {
+            "origem": "sala 8",
+            "destino": "sala 10",
+            "peso": 4.0
+        },
+        {
+            "origem": "sala 9",
+            "destino": "sala 10",
+            "peso": 3.0
+        },
+        {
+            "origem": "sala 9",
+            "destino": "sala 11",
+            "peso": 6.0
+        },
+        {
+            "origem": "sala 10",
+            "destino": "sala 11",
+            "peso": 3.3
+        },
+        {
+            "origem": "saida",
+            "destino": "secretaria",
+            "peso": 4.2
+        },
+        {
+            "origem": "saida",
+            "destino": "banheiros",
+            "peso": 4.3
+        },
+        {
+            "origem": "sala 11",
+            "destino": "sala 12",
+            "peso": 2.5
+        },
+        {
+            "origem": "sala 12",
+            "destino": "sala 13",
+            "peso": 4.1
+        },
+        {
+            "origem": "sala 12",
+            "destino": "sala 17",
+            "peso": 3.2
+        },
+        {
+            "origem": "sala 13",
+            "destino": "sala 14",
+            "peso": 2.3
+        },
+        {
+            "origem": "sala 14",
+            "destino": "sala 15",
+            "peso": 2.3
+        },
+        {
+            "origem": "sala 14",
+            "destino": "sala 17",
+            "peso": 3.1
+        },
+        {
+            "origem": "sala 15",
+            "destino": "sala 17",
+            "peso": 2.1
+        },
+        {
+            "origem": "sala 16",
+            "destino": "sala 18",
+            "peso": 10.0
+        }
+    ],
+    "entrada": null,
+    "saida": null,
+    "incidente": [],
+    "pos": null
+}
