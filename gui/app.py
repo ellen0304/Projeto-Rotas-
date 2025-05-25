@@ -23,7 +23,6 @@ class App(tk.Tk):
 
         self.layout_fixo = None
 
-        # Histórico único que junta BFS, DFS e Dijkstra
         self.historico_rotas = []
 
         self.criar_botoes()
@@ -38,12 +37,12 @@ class App(tk.Tk):
         botoes = [
             ("➕ Adicionar Sala/Corredor", self.adicionar_no),
             ("🔗 Conectar Pontos com Distância", self.adicionar_aresta),
-            ("🏁 Definir Entrada", self.definir_entrada),
+            ("📍 Definir Local Atual", self.definir_entrada),
             ("🚪 Definir Saída", self.definir_saida),
             ("🔥 Definir Incidente", self.definir_incidente),
-            ("🔍 Rota Principal (BFS)", self.buscar_rota_bfs),
+            ("🛤️ Rota Principal (Dijkstra)", self.buscar_rota_dijkstra),
+            ("🔍 Rota Alternativa (BFS)", self.buscar_rota_bfs),
             ("🧭 Rota Alternativa (DFS)", self.buscar_rota_dfs),
-            ("🛤️ Rota Mais Curta (Dijkstra)", self.buscar_rota_dijkstra),
             ("📜 Mostrar Histórico", self.mostrar_historico),
             ("💾 Salvar Simulação", self.salvar_simulacao),
             ("📂 Carregar Simulação", self.carregar_simulacao),
@@ -62,28 +61,30 @@ class App(tk.Tk):
 
         pos = self.layout_fixo
 
-        # Desenha o grafo normalmente
         nx.draw(self.grafo.grafo, pos, with_labels=True, ax=self.ax,
                 node_color="lightgray", edge_color="gray",
                 node_size=2000, font_size=10)
 
-        # Desenha pesos das arestas com fundo branco semi-transparente
-        edge_labels = {}
-        for u, v, d in self.grafo.grafo.edges(data=True):
-            peso = d.get('weight', 1)  # Usa peso padrão 1 se não existir
-            edge_labels[(u, v)] = f"{peso}"
+        edge_labels = {
+            (u, v): f"{d.get('weight', 1)}"
+            for u, v, d in self.grafo.grafo.edges(data=True)
+        }
 
         nx.draw_networkx_edge_labels(self.grafo.grafo, pos, edge_labels=edge_labels,
-                                    font_color='black', font_size=9,
-                                    bbox=dict(boxstyle="round,pad=0.2", fc="white", alpha=0.7))
+                                     font_color='black', font_size=9,
+                                     bbox=dict(boxstyle="round,pad=0.2", fc="white", alpha=0.7))
 
-        # Desenha caminho se houver
         if caminho:
-            edges = [(caminho[i], caminho[i+1]) for i in range(len(caminho)-1)]
+            edges = [(caminho[i], caminho[i + 1]) for i in range(len(caminho) - 1)]
             nx.draw_networkx_edges(self.grafo.grafo, pos, edgelist=edges, edge_color=cor, width=3, ax=self.ax)
             nx.draw_networkx_nodes(self.grafo.grafo, pos, nodelist=caminho, node_color=cor, ax=self.ax)
 
-        # Destaca nós com incidentes (suporta lista)
+        if self.grafo.entrada:
+            nx.draw_networkx_nodes(self.grafo.grafo, pos, nodelist=[self.grafo.entrada], node_color='gold', ax=self.ax)
+
+        if self.grafo.saida:
+            nx.draw_networkx_nodes(self.grafo.grafo, pos, nodelist=[self.grafo.saida], node_color='green', ax=self.ax)
+
         incidentes = self.grafo.incidente
         if incidentes:
             if isinstance(incidentes, list):
@@ -118,16 +119,18 @@ class App(tk.Tk):
             self.desenhar_mapa()
 
     def definir_entrada(self):
-        ponto = simpledialog.askstring("Entrada", "Qual ponto é a entrada?")
+        ponto = simpledialog.askstring("Local Atual", "Qual ponto é o local atual?")
         if ponto:
             self.grafo.entrada = ponto
-            messagebox.showinfo("Entrada Definida", f"Entrada definida como: {ponto}")
+            messagebox.showinfo("Local Atual Definido", f"Local atual definido como: {ponto}")
+            self.desenhar_mapa()
 
     def definir_saida(self):
         ponto = simpledialog.askstring("Saída", "Qual ponto é a saída?")
         if ponto:
             self.grafo.saida = ponto
             messagebox.showinfo("Saída Definida", f"Saída definida como: {ponto}")
+            self.desenhar_mapa()
 
     def definir_incidente(self):
         ponto = simpledialog.askstring("Incidente", "Onde está o incidente? (Para múltiplos, separe por vírgula)")
@@ -139,33 +142,41 @@ class App(tk.Tk):
 
     def buscar_rota_bfs(self):
         if not (self.grafo.entrada and self.grafo.saida):
-            messagebox.showwarning("Erro", "Entrada e Saída devem ser definidas.")
+            messagebox.showwarning("Erro", "Local atual e saída devem ser definidos.")
             return
 
         caminho = self.grafo.bfs()
         if caminho:
+            distancia = sum(
+                self.grafo.grafo[caminho[i]][caminho[i + 1]].get('weight', 1)
+                for i in range(len(caminho) - 1)
+            )
             self.desenhar_mapa(caminho, cor='skyblue')
             self.historico_rotas.append(("BFS", caminho))
-            messagebox.showinfo("Rota BFS", " → ".join(caminho))
+            messagebox.showinfo("Rota BFS", f"{' → '.join(caminho)}\nDistância total: {distancia:.2f} metros")
         else:
             messagebox.showwarning("Erro", "Rota não encontrada.")
 
     def buscar_rota_dfs(self):
         if not (self.grafo.entrada and self.grafo.saida):
-            messagebox.showwarning("Erro", "Entrada e Saída devem ser definidas.")
+            messagebox.showwarning("Erro", "Local atual e saída devem ser definidos.")
             return
 
         caminho = self.grafo.dfs()
         if caminho:
+            distancia = sum(
+                self.grafo.grafo[caminho[i]][caminho[i + 1]].get('weight', 1)
+                for i in range(len(caminho) - 1)
+            )
             self.desenhar_mapa(caminho, cor='deeppink')
             self.historico_rotas.append(("DFS", caminho))
-            messagebox.showinfo("Rota DFS", " → ".join(caminho))
+            messagebox.showinfo("Rota DFS", f"{' → '.join(caminho)}\nDistância total: {distancia:.2f} metros")
         else:
             messagebox.showwarning("Erro", "Rota não encontrada.")
 
     def buscar_rota_dijkstra(self):
         if not (self.grafo.entrada and self.grafo.saida):
-            messagebox.showwarning("Erro", "Entrada e Saída devem ser definidas.")
+            messagebox.showwarning("Erro", "Local atual e saída devem ser definidos.")
             return
 
         resultado = self.grafo.dijkstra(self.grafo.entrada, self.grafo.saida, self.grafo.incidente)
@@ -188,15 +199,20 @@ class App(tk.Tk):
             rota = item[1]
             if tipo == "Dijkstra":
                 distancia = item[2]
-                texto += f"{tipo}: {' → '.join(rota)} (Distância: {distancia:.2f}m)\n"
+                texto += f"🛤️ {tipo.upper()}:\n{' → '.join(rota)}\nDistância: {distancia:.2f}m\n\n"
             else:
-                texto += f"{tipo}: {' → '.join(rota)}\n"
+                distancia = sum(
+                    self.grafo.grafo[rota[i]][rota[i + 1]].get('weight', 1)
+                    for i in range(len(rota) - 1)
+                )
+                icone = "🔍" if tipo == "BFS" else "🧭"
+                texto += f"{icone} {tipo.upper()}:\n{' → '.join(rota)}\nDistância total: {distancia:.2f}m\n\n"
 
-        messagebox.showinfo("Histórico de Rotas", texto)
+        messagebox.showinfo("Histórico de Rotas", texto.strip())
 
     def salvar_simulacao(self):
         caminho_arquivo = filedialog.asksaveasfilename(defaultextension=".json",
-                                                      filetypes=[("JSON files", "*.json")])
+                                                       filetypes=[("JSON files", "*.json")])
         if caminho_arquivo:
             try:
                 self.sim_manager.salvar(self.grafo, caminho_arquivo)
@@ -206,11 +222,10 @@ class App(tk.Tk):
 
     def carregar_simulacao(self):
         caminho_arquivo = filedialog.askopenfilename(defaultextension=".json",
-                                                    filetypes=[("JSON files", "*.json")])
+                                                     filetypes=[("JSON files", "*.json")])
         if caminho_arquivo:
             try:
                 self.grafo = self.sim_manager.carregar(caminho_arquivo)
-                # Atualiza o layout fixo para o carregado no grafo
                 self.layout_fixo = getattr(self.grafo, 'layout_fixo', None)
                 self.historico_rotas.clear()
                 self.desenhar_mapa()
@@ -229,6 +244,3 @@ class App(tk.Tk):
         self.historico_rotas.clear()
         self.desenhar_mapa()
         messagebox.showinfo("Limpar", "Grafo limpo.")
-
-
-
