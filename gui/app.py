@@ -57,7 +57,10 @@ class App(tk.Tk):
 
         self.ax.clear()
         if self.layout_fixo is None:
-            self.layout_fixo = nx.spring_layout(self.grafo.grafo, seed=42)
+            if len(self.grafo.grafo.nodes) > 0:
+                self.layout_fixo = nx.spring_layout(self.grafo.grafo, seed=42)
+            else:
+                self.layout_fixo = {}
 
         pos = self.layout_fixo
 
