@@ -118,12 +118,12 @@ python main.py
 
 - Universidade: **Universidade Braz Cubas**
 - Curso: **Análise e Desenvolvimento de Sistemas**
-- Semestre: 2º 
-- Período: Noite
+- Semestre: **2º**
+- Período: **Noite**
 - Professora orientadora: **Dra. Andréa Ono Sakai**
 - Evento: **Mostra de Tecnologia 1º Semestre de 2025**
-- Local: Laboratório 12
-- Datas: 05 e 06 de junho de 2025
+- Local: **Laboratório 12**
+- Datas: **05 e 06 de junho de 2025**
 
 ---
 
