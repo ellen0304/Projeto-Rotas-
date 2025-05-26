@@ -1,74 +1,127 @@
-# RS - Rota Segura
+# 🚀 RS – Rota Segura
 
-🧭 **RS - Rota Segura** é um sistema desenvolvido em Python com interface gráfica (Tkinter) que auxilia a equipe de treinamento de emergência da universidade a simular e planejar rotas de evacuação em caso de incidentes como incêndios. O sistema utiliza algoritmos de grafos para encontrar a rota mais rápida (BFS) e rotas alternativas (DFS).
+**Resumo:** O RS – Rota Segura é um sistema interativo para simulação de rotas de evacuação em ambientes universitários, utilizando algoritmos de grafos. Através de uma interface gráfica intuitiva, o aplicativo permite o planejamento eficiente de rotas seguras considerando diferentes cenários, como incidentes ou bloqueios inesperados.
 
-## 🚀 Funcionalidades
+---
 
-- Modelagem dinâmica do grafo (cada nó representa salas, portas, escadas, etc).
-- Marcação do ponto de entrada, saída e local do incidente.
-- Cálculo da rota mais curta com **BFS**.
-- Geração de rotas alternativas com **DFS**.
-- Visualização gráfica do mapa e dos caminhos encontrados.
-- Exibição textual da sequência de nós da rota.
-- Salvamento e reconsulta de simulações anteriores.
+## 🎯 Objetivo
 
-## 🗃️ Estrutura de Pastas
+O projeto tem como objetivo principal auxiliar equipes de segurança e gestores na identificação de rotas de evacuação eficientes em situações de emergência. Utilizando conceitos de Teoria dos Grafos, o sistema modela ambientes como grafos e aplica os algoritmos de Dijkstra, BFS e DFS para calcular e comparar caminhos possíveis entre pontos de entrada e saída. A aplicação permite a visualização gráfica dessas rotas, a simulação de bloqueios e a análise da resiliência das opções disponíveis. Assim, o sistema promove um planejamento mais seguro e assertivo, unindo teoria computacional à prática em situações reais, alinhado aos conteúdos estudados na disciplina.
 
-Abaixo está a organização dos arquivos e diretórios do projeto **Rota Segura**:
+---
 
-📁 rota_segura/
-│
-├── main.py # Arquivo principal para iniciar a aplicação
-├── requirements.txt # Dependências do projeto
-├── README.md # Este arquivo
-│
-├── gui/ # Tudo relacionado à interface Tkinter
-│ └── app.py # Classe App (Tkinter)
-│ └── componentes.py # Componentes auxiliares (ex: pop-ups)
-│
-├── core/ # Lógica do grafo e algoritmos
-│ └── grafo.py # Classe Grafo com métodos BFS, DFS e modificações
-│ └── simulacao.py # Gerenciamento de simulações salvas
-│
-├── data/ # Arquivos de simulações salvas (JSON)
+## 👨‍💻 Tecnologias Utilizadas
+
+- Python 3.12
+- Tkinter 
+- Matplotlib 
+- NetworkX 
+- JSON
 
 
+---
 
-🛠️ Tecnologias Utilizadas
+## 🗂️ Estrutura do Projeto
 
-Python 3.x
+ 
+```
+📦 nome-do-projeto
+├── 📁 core
+│   ├── grafo.py
+│   └── simulacao.py
+├── 📁 data
+│   └── simulacoes-salvas/
+├── 📁 gui
+│   ├── app.py
+│   ├── icone.ico
+│   └── icone.png
+├── README.md
+├── main.py
+└── requirements.txt
+```
 
-Tkinter
-<img width="960" alt="tela-inicial-rs" src="https://github.com/user-attachments/assets/b98f5bb0-68d1-403f-86d3-7365f7054551" />
+---
 
-NetworkX
+## ⚙️ Como Executar
 
-Matplotlib
+### ✅ Rodando Localmente
 
+1. Clone o repositório:
 
-## 🖥️ Como Executar
+```
+git clone https://github.com/ellen0304/Projeto-Rotas-
+cd Projeto-Rotas-
+```
 
-1. Clone ou baixe este repositório.
+2. Crie o ambiente virtual e ative:
 
-2. 📦 Criando e ativando um ambiente virtual (venv) em Python
-
-Siga os passos abaixo para criar e ativar um ambiente virtual com Python.
-
-Acesse a pasta do seu projeto
-
-```bash
-cd caminho/da/sua/pasta
+```
 python -m venv venv
-venv\Scripts\activate
+source venv/bin/activate  # ou venv\Scripts\activate no Windows
 ```
 
 3. Instale as dependências:
-   ```bash
-   pip install -r requirements.txt 
 
-4. Execute o sistema:
-```bash
+```
+pip install -r requirements.txt
+```
+
+4. Execute a aplicação:
+
+```
 python main.py
+```
+
+---
+
+## 📸 Demonstrações
+
+- Tela inicial do sistema
+
+<img width="960" alt="tela-inicial-rs" src="https://github.com/user-attachments/assets/a4f03bad-f7f1-412a-a6b1-66ee3654f1de" />
+
+ 
+- Funcionalidade "Carregar simulação" (Aqui foi utilizado um mapa pré-salvo referente ao arquivo "mapa4.json" da pasta "data"
+
+<img width="960" alt="funcao-carregar-simulacao" src="https://github.com/user-attachments/assets/9ba62cf8-9c2d-4215-aa7a-436877a18485" />
 
 
+- Resultados esperados: Obter históricos de rotas encontradas nos 3 algoritmos (para comparação)
 
+<img width="960" alt="resultado-esperado-rotas-comparativo" src="https://github.com/user-attachments/assets/b71f7a22-b725-4ab8-bc1c-9a4f9dfd0b18" />
+
+
+---
+
+## 👥 Equipe
+
+| Nome | GitHub |
+|------|--------|
+| Beatriz Courel | [@courelbeatriz](https://github.com/fulano) |
+| Flávia de Souza | [@ellen0304](https://github.com/ellen0304) |
+| Gabriele Antonio | [@Gabi160 ](https://github.com/Gabi160) |
+
+---
+
+## 🧠 Disciplinas Envolvidas
+
+- Teoria dos Grafos
+
+---
+
+## 🏫 Informações Acadêmicas
+
+- Universidade: **Universidade Braz Cubas**
+- Curso: **Análise e Desenvolvimento de Sistemas**
+- Semestre: 2º 
+- Período: Noite
+- Professora orientadora: **Dra. Andréa Ono Sakai**
+- Evento: **Mostra de Tecnologia 1º Semestre de 2025**
+- Local: Laboratório 12
+- Datas: 05 e 06 de junho de 2025
+
+---
+
+## 📄 Licença
+
+MIT License — sinta-se à vontade para utilizar, estudar e adaptar este projeto.
