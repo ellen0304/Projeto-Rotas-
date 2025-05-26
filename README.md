@@ -39,6 +39,7 @@ Abaixo está a organização dos arquivos e diretórios do projeto **Rota Segura
 Python 3.x
 
 Tkinter
+<img width="960" alt="tela-inicial-rs" src="https://github.com/user-attachments/assets/b98f5bb0-68d1-403f-86d3-7365f7054551" />
 
 NetworkX
 
