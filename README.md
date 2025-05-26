@@ -76,14 +76,19 @@ python main.py
 
 ## 📸 Demonstrações
 
+
 - Tela inicial do sistema
 
 <img width="960" alt="tela-inicial-rs" src="https://github.com/user-attachments/assets/a4f03bad-f7f1-412a-a6b1-66ee3654f1de" />
 
  
+
+
 - Funcionalidade "Carregar simulação" (Aqui foi utilizado um mapa pré-salvo referente ao arquivo "mapa4.json" da pasta "data"
 
 <img width="960" alt="funcao-carregar-simulacao" src="https://github.com/user-attachments/assets/9ba62cf8-9c2d-4215-aa7a-436877a18485" />
+
+
 
 
 - Resultados esperados: Obter históricos de rotas encontradas nos 3 algoritmos (para comparação)
