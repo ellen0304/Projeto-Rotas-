@@ -1,0 +1,184 @@
+{
+    "nos": [
+        "sala 1",
+        "sala 2",
+        "sala 3",
+        "sala 4",
+        "sala 5",
+        "sala 6",
+        "sala 7",
+        "saida",
+        "banheiro",
+        "sala 8",
+        "sala 9",
+        "sala 10",
+        "secretaria",
+        "sala 11",
+        "sala 12",
+        "sala 13",
+        "sala 14",
+        "banheiro 2",
+        "biblioteca"
+    ],
+    "arestas": [
+        {
+            "origem": "sala 1",
+            "destino": "sala 2",
+            "peso": 2.0
+        },
+        {
+            "origem": "sala 1",
+            "destino": "sala 3",
+            "peso": 1.0
+        },
+        {
+            "origem": "sala 1",
+            "destino": "sala 4",
+            "peso": 3.0
+        },
+        {
+            "origem": "sala 2",
+            "destino": "sala 6",
+            "peso": 2.0
+        },
+        {
+            "origem": "sala 2",
+            "destino": "sala 8",
+            "peso": 3.0
+        },
+        {
+            "origem": "sala 3",
+            "destino": "sala 7",
+            "peso": 1.0
+        },
+        {
+            "origem": "sala 3",
+            "destino": "sala 5",
+            "peso": 2.0
+        },
+        {
+            "origem": "sala 3",
+            "destino": "sala 8",
+            "peso": 8.0
+        },
+        {
+            "origem": "sala 3",
+            "destino": "sala 9",
+            "peso": 3.0
+        },
+        {
+            "origem": "sala 4",
+            "destino": "sala 5",
+            "peso": 2.0
+        },
+        {
+            "origem": "sala 4",
+            "destino": "sala 6",
+            "peso": 1.0
+        },
+        {
+            "origem": "sala 4",
+            "destino": "banheiro",
+            "peso": 6.0
+        },
+        {
+            "origem": "sala 5",
+            "destino": "saida",
+            "peso": 5.0
+        },
+        {
+            "origem": "sala 6",
+            "destino": "banheiro",
+            "peso": 2.0
+        },
+        {
+            "origem": "sala 6",
+            "destino": "sala 13",
+            "peso": 2.0
+        },
+        {
+            "origem": "sala 7",
+            "destino": "saida",
+            "peso": 2.0
+        },
+        {
+            "origem": "sala 7",
+            "destino": "sala 9",
+            "peso": 3.0
+        },
+        {
+            "origem": "sala 7",
+            "destino": "sala 11",
+            "peso": 1.0
+        },
+        {
+            "origem": "sala 7",
+            "destino": "biblioteca",
+            "peso": 1.0
+        },
+        {
+            "origem": "saida",
+            "destino": "sala 10",
+            "peso": 3.0
+        },
+        {
+            "origem": "banheiro",
+            "destino": "sala 10",
+            "peso": 4.0
+        },
+        {
+            "origem": "banheiro",
+            "destino": "sala 13",
+            "peso": 4.0
+        },
+        {
+            "origem": "sala 8",
+            "destino": "secretaria",
+            "peso": 4.0
+        },
+        {
+            "origem": "sala 9",
+            "destino": "secretaria",
+            "peso": 2.0
+        },
+        {
+            "origem": "sala 9",
+            "destino": "biblioteca",
+            "peso": 3.0
+        },
+        {
+            "origem": "sala 10",
+            "destino": "sala 11",
+            "peso": 2.0
+        },
+        {
+            "origem": "sala 10",
+            "destino": "sala 12",
+            "peso": 5.0
+        },
+        {
+            "origem": "sala 11",
+            "destino": "sala 12",
+            "peso": 3.0
+        },
+        {
+            "origem": "sala 12",
+            "destino": "sala 14",
+            "peso": 5.0
+        },
+        {
+            "origem": "sala 13",
+            "destino": "sala 14",
+            "peso": 3.0
+        },
+        {
+            "origem": "sala 13",
+            "destino": "banheiro 2",
+            "peso": 3.0
+        }
+    ],
+    "entrada": null,
+    "saida": null,
+    "incidente": [],
+    "pos": null
+}
